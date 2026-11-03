@@ -1,0 +1,2379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Club Tours | Our Packages</title>
+
+    <meta name="description"
+        content="Explore Club Tours travel packages across Kerala, South India, North India and international destinations.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        :root {
+
+            --primary: #0d6e6e;
+            --primary-dark: #075252;
+
+            --accent: #1A9BB8;
+
+            --dark: #092f2f;
+            --dark-2: #123f3f;
+
+            --text: #334646;
+            --muted: #738181;
+
+            --light: #f5f8f7;
+            --white: #ffffff;
+
+            --border: rgba(9, 47, 47, .12);
+
+            --shadow:
+                0 20px 60px rgba(9, 47, 47, .12);
+
+            --radius: 24px;
+
+            --transition: .4s cubic-bezier(.2, .8, .2, 1);
+
+            --club-blue: #0F758F;
+            --club-blue-light: #1A9BB8;
+            --club-blue-dark: #09586C;
+
+        }
+
+        .logo-normal {
+            display: none;
+        }
+
+        .logo-white {
+            display: block;
+        }
+
+        .navbar.scrolled .logo-white {
+            display: none;
+        }
+
+        .navbar.scrolled .logo-normal {
+            display: block;
+        }
+
+        .logo {
+
+            font-family: "Playfair Display";
+
+            font-size: 27px;
+
+            font-weight: 700;
+
+            color: white;
+        }
+
+        .logo img {
+            width: 200px;
+            margin: 10px;
+        }
+
+        .navbar.scrolled .logo {
+            color: var(--dark);
+        }
+
+        /* =========================================
+           MORE PACKAGES PAGE
+        ========================================= */
+
+        .packages-page {
+            padding-top: 110px;
+            background: var(--light);
+            min-height: 100vh;
+        }
+
+        /* PAGE HERO */
+
+        .packages-hero {
+            position: relative;
+            min-height: 550px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            overflow: hidden;
+
+            background:
+                linear-gradient(90deg,
+                    rgba(4, 31, 31, 0.92),
+                    rgba(13, 110, 110, .72)),
+                url("images/kerala2.jfif");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .packages-hero-content {
+            position: relative;
+            z-index: 2;
+
+            width: min(850px, 90%);
+
+            color: white;
+        }
+
+        .packages-hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+
+            font-size: 11px;
+            font-weight: 700;
+
+            letter-spacing: 3px;
+
+            color: var(--light);
+
+            margin-bottom: 20px;
+        }
+
+        .packages-hero-label span {
+            width: 35px;
+            height: 2px;
+
+            background: #49c0db;
+        }
+
+        .packages-hero h1 {
+            font-family: "Playfair Display";
+
+            font-size: clamp(45px, 7vw, 75px);
+
+            line-height: 1;
+
+            margin-bottom: 20px;
+        }
+
+        .packages-hero h1 em {
+            color: #49c0db;
+            font-style: italic;
+        }
+
+        .packages-hero p {
+            max-width: 650px;
+
+            margin: auto;
+
+            color: rgba(255, 255, 255, .75);
+
+            line-height: 1.8;
+
+            font-size: 16px;
+        }
+
+
+        /* MAIN CONTENT */
+
+        .all-packages {
+            padding: 90px 0;
+        }
+
+        .package-heading {
+            text-align: center;
+
+            max-width: 700px;
+
+            margin: 0 auto 55px;
+        }
+
+        .package-heading .section-label {
+            justify-content: center;
+        }
+
+        .package-heading h2 {
+            font-family: "Playfair Display";
+
+            font-size: clamp(38px, 5vw, 55px);
+
+            color: var(--dark);
+
+            margin: 15px 0;
+        }
+
+        .package-heading h2 em {
+            color: var(--primary);
+            font-style: italic;
+        }
+
+        .package-heading p {
+            color: var(--muted);
+
+            line-height: 1.8;
+        }
+
+
+        /* FILTER */
+
+        .package-filters {
+            display: flex;
+
+            justify-content: center;
+
+            flex-wrap: wrap;
+
+            gap: 12px;
+
+            margin-bottom: 45px;
+        }
+
+        .filter-btn {
+            border: 1px solid rgba(13, 110, 110, .18);
+
+            background: white;
+
+            color: var(--primary);
+
+            padding: 11px 22px;
+
+            border-radius: 50px;
+
+            font-family: inherit;
+
+            font-size: 13px;
+
+            font-weight: 600;
+
+            cursor: pointer;
+
+            transition: .3s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--primary);
+
+            color: white;
+
+            border-color: var(--primary);
+
+            transform: translateY(-2px);
+        }
+
+
+        /* PACKAGE GRID */
+
+        .all-package-grid {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 28px;
+        }
+
+        .tour-card {
+            background: white;
+
+            border-radius: var(--radius);
+
+            overflow: hidden;
+
+            border: 1px solid rgba(0, 0, 0, .04);
+
+            box-shadow: 0 10px 40px rgba(0, 0, 0, .06);
+
+            transition: var(--transition);
+        }
+
+        .tour-card:hover {
+            transform: translateY(-10px);
+
+            box-shadow: var(--shadow);
+        }
+
+        .tour-image {
+            height: 250px;
+
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .tour-image img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            transition: .7s;
+        }
+
+        .tour-card:hover .tour-image img {
+            transform: scale(1.08);
+        }
+
+        .tour-image::after {
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background: linear-gradient(transparent 45%,
+                    rgba(0, 0, 0, .55));
+        }
+
+        .tour-tag {
+            position: absolute;
+
+            top: 18px;
+            left: 18px;
+
+            z-index: 2;
+
+            padding: 7px 13px;
+
+            border-radius: 50px;
+
+            background: rgba(255, 255, 255, .15);
+
+            border: 1px solid rgba(255, 255, 255, .5);
+
+            backdrop-filter: blur(10px);
+
+            color: white;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+        }
+
+        .tour-content {
+            padding: 27px;
+        }
+
+        .tour-content small {
+            color: var(--primary);
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+        }
+
+        .tour-content h3 {
+            font-family: "Playfair Display";
+
+            color: var(--dark);
+
+            font-size: 27px;
+
+            margin: 9px 0;
+        }
+
+        .tour-content p {
+            color: var(--muted);
+
+            line-height: 1.7;
+
+            font-size: 14px;
+
+            margin-bottom: 20px;
+        }
+
+        .tour-details {
+            display: flex;
+
+            gap: 18px;
+
+            flex-wrap: wrap;
+
+            padding: 15px 0;
+
+            border-top: 1px solid var(--border);
+
+            border-bottom: 1px solid var(--border);
+
+            margin-bottom: 20px;
+        }
+
+        .tour-details span {
+            color: var(--muted);
+
+            font-size: 12px;
+        }
+
+        .tour-details i {
+            color: var(--accent);
+
+            margin-right: 5px;
+        }
+
+        .tour-bottom {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            gap: 15px;
+        }
+
+        .tour-price {
+            color: var(--dark);
+
+            font-family: "Playfair Display";
+
+            font-size: 22px;
+
+            font-weight: 700;
+        }
+
+        .tour-price small {
+            display: block;
+
+            color: var(--muted);
+
+            font-family: "DM Sans";
+
+            font-size: 10px;
+
+            letter-spacing: 0;
+
+            font-weight: 400;
+        }
+
+        .tour-btn {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            padding: 11px 17px;
+
+            border-radius: 50px;
+
+            background: var(--primary);
+
+            color: white;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            transition: .3s;
+        }
+
+        .tour-btn:hover {
+            background: var(--primary-dark);
+
+            transform: translateY(-2px);
+        }
+
+
+        /* CTA */
+
+        .packages-cta {
+            margin-top: 80px;
+
+            padding: 65px 40px;
+
+            border-radius: 30px;
+
+            background:
+                linear-gradient(120deg,
+                    var(--dark),
+                    var(--primary-dark));
+
+            text-align: center;
+
+            color: white;
+        }
+
+        .packages-cta h2 {
+            font-family: "Playfair Display";
+
+            font-size: clamp(35px, 5vw, 50px);
+
+            margin-bottom: 15px;
+        }
+
+        .packages-cta h2 em {
+            color: var(--accent);
+        }
+
+        .packages-cta p {
+            color: rgba(255, 255, 255, .65);
+
+            max-width: 600px;
+
+            margin: 0 auto 28px;
+
+            line-height: 1.8;
+        }
+
+        .cta-btn {
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 14px 25px;
+
+            background: white;
+
+            color: var(--dark);
+
+            border-radius: 50px;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            transition: .3s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+
+            box-shadow: 0 12px 30px rgba(0, 0, 0, .2);
+        }
+
+
+        /* RESPONSIVE */
+
+        @media (max-width: 1000px) {
+
+            .all-package-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 650px) {
+
+            .packages-hero {
+                min-height: 330px;
+            }
+
+            .all-packages {
+                padding: 65px 0;
+            }
+
+            .all-package-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .tour-image {
+                height: 230px;
+            }
+
+            .packages-cta {
+                padding: 50px 25px;
+            }
+
+        }
+
+
+
+
+        /* =========================================================
+   WHATSAPP
+========================================================= */
+
+        .whatsapp {
+
+            position: fixed;
+
+            right: 25px;
+
+            bottom: 25px;
+
+            width: 58px;
+
+            height: 58px;
+
+            border-radius: 50%;
+
+            display: grid;
+
+            place-items: center;
+
+            background: #25D366;
+
+            color: white;
+
+            font-size: 28px;
+
+            z-index: 900;
+
+            box-shadow: 0 10px 30px rgba(37, 211, 102, .35);
+
+            animation: whatsappPulse 2s infinite;
+        }
+
+        @keyframes whatsappPulse {
+
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, .5);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+            }
+        }
+
+
+        /* =========================================================
+   BACK TOP
+========================================================= */
+
+        .back-top {
+
+            position: fixed;
+
+            right: 25px;
+
+            bottom: 95px;
+
+            width: 45px;
+
+            height: 45px;
+
+            border-radius: 50%;
+
+            border: none;
+
+            background: var(--dark);
+
+            color: white;
+
+            cursor: pointer;
+
+            opacity: 0;
+
+            visibility: hidden;
+
+            transform: translateY(15px);
+
+            transition: .3s;
+
+            z-index: 800;
+        }
+
+        .back-top.show {
+
+            opacity: 1;
+
+            visibility: visible;
+
+            transform: translateY(0);
+        }
+
+        /* =========================================================
+   REVEAL ANIMATION
+========================================================= */
+
+        .reveal {
+
+            opacity: 0;
+
+            transform: translateY(50px);
+
+            transition:
+                opacity .8s ease,
+                transform .8s cubic-bezier(.2, .8, .2, 1);
+        }
+
+        .reveal.visible {
+
+            opacity: 1;
+
+            transform: translateY(0);
+        }
+
+        @keyframes fadeUp {
+
+            from {
+
+                opacity: 0;
+
+                transform: translateY(30px);
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: translateY(0);
+            }
+        }
+
+
+
+
+        /* =========================================================
+   KERALA ITINERARY POPUP
+========================================================= */
+
+        .kerala-modal {
+
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 99999;
+
+            display: none;
+
+            align-items: center;
+
+            justify-content: center;
+
+            padding: 20px;
+        }
+
+
+        .kerala-modal.active {
+
+            display: flex;
+
+        }
+
+
+        /* DARK OVERLAY */
+
+        .kerala-modal-overlay {
+
+            position: absolute;
+
+            inset: 0;
+
+            background: rgba(0, 0, 0, .58);
+
+            backdrop-filter: blur(3px);
+
+        }
+
+
+        /* POPUP */
+
+        .kerala-modal-box {
+
+            position: relative;
+
+            z-index: 2;
+
+            width: min(650px, 100%);
+
+            max-height: 88vh;
+
+            background: #fff;
+
+            border-radius: 16px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 25px 80px rgba(0, 0, 0, .35);
+
+            animation: keralaPopup .3s ease;
+
+        }
+
+
+        @keyframes keralaPopup {
+
+            from {
+
+                opacity: 0;
+
+                transform: translateY(25px) scale(.97);
+
+            }
+
+            to {
+
+                opacity: 1;
+
+                transform: translateY(0) scale(1);
+
+            }
+
+        }
+
+
+        /* HEADER */
+
+        .kerala-modal-header {
+
+            position: relative;
+
+            background: #07879b;
+
+            color: white;
+
+            padding: 18px 55px 18px 20px;
+
+        }
+
+
+        .kerala-modal-header h2 {
+
+            margin: 0;
+
+            font-family: "DM Sans", sans-serif;
+
+            font-size: 20px;
+
+            font-weight: 700;
+
+        }
+
+
+        /* CLOSE X */
+
+        .kerala-close {
+
+            position: absolute;
+
+            top: 14px;
+
+            right: 14px;
+
+            width: 35px;
+
+            height: 35px;
+
+            border: none;
+
+            background: transparent;
+
+            color: white;
+
+            font-size: 24px;
+
+            cursor: pointer;
+
+            transition: .25s;
+
+        }
+
+
+        .kerala-close:hover {
+
+            transform: rotate(90deg);
+
+        }
+
+
+        /* CONTENT */
+
+        .kerala-modal-content {
+
+            padding: 26px 25px;
+
+            max-height: 58vh;
+
+            overflow-y: auto;
+
+        }
+
+
+        .kerala-package-label {
+
+            color: #07879b;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 7px;
+
+        }
+
+
+        .kerala-modal-content>h3 {
+
+            margin: 0 0 7px;
+
+            color: #092f2f;
+
+            font-family: "Playfair Display", serif;
+
+            font-size: 28px;
+
+        }
+
+
+        .kerala-intro {
+
+            color: #6f7777;
+
+            font-size: 14px;
+
+            line-height: 1.6;
+
+            margin: 0 0 20px;
+
+        }
+
+
+        /* DAY */
+
+        .kerala-day {
+
+            display: flex;
+
+            gap: 15px;
+
+            padding: 17px 0;
+
+            border-bottom: 1px solid #e7eeee;
+
+        }
+
+
+        .kerala-day:last-child {
+
+            border-bottom: none;
+
+        }
+
+
+        /* NUMBER */
+
+        .kerala-day-number {
+
+            flex: 0 0 42px;
+
+            width: 42px;
+
+            height: 42px;
+
+            border-radius: 10px;
+
+            background: #e8f7fa;
+
+            color: #07879b;
+
+            display: grid;
+
+            place-items: center;
+
+            font-size: 12px;
+
+            font-weight: 800;
+
+        }
+
+
+        /* DAY TEXT */
+
+        .kerala-day-info h4 {
+
+            margin: 0 0 5px;
+
+            color: #092f2f;
+
+            font-size: 16px;
+
+            font-weight: 700;
+
+        }
+
+
+        .kerala-day-info p {
+
+            margin: 0;
+
+            color: #737d7d;
+
+            font-size: 13px;
+
+            line-height: 1.65;
+
+        }
+
+
+        /* FOOTER */
+
+        .kerala-modal-footer {
+
+            display: flex;
+
+            justify-content: flex-end;
+
+            align-items: center;
+
+            gap: 10px;
+
+            padding: 17px 20px;
+
+            border-top: 1px solid #e5eaea;
+
+            background: #fff;
+
+        }
+
+
+        /* CANCEL */
+
+        .kerala-cancel {
+
+            border: none;
+
+            border-radius: 25px;
+
+            padding: 10px 19px;
+
+            background: #737d85;
+
+            color: white;
+
+            font-family: inherit;
+
+            font-size: 13px;
+
+            cursor: pointer;
+
+            transition: .25s;
+
+        }
+
+
+        .kerala-cancel:hover {
+
+            background: #555d63;
+
+        }
+
+
+        /* WHATSAPP */
+
+        .kerala-whatsapp {
+
+            display: inline-flex;
+
+            align-items: center;
+
+            gap: 8px;
+
+            border-radius: 25px;
+
+            padding: 10px 20px;
+
+            background: #07879b;
+
+            color: white;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            transition: .25s;
+
+        }
+
+
+        .kerala-whatsapp:hover {
+
+            background: #056d7d;
+
+            transform: translateY(-2px);
+
+        }
+
+
+        /* MOBILE */
+
+        @media (max-width: 600px) {
+
+            .kerala-modal {
+
+                padding: 12px;
+
+            }
+
+            .kerala-modal-box {
+
+                max-height: 92vh;
+
+                border-radius: 14px;
+
+            }
+
+            .kerala-modal-content {
+
+                padding: 22px 18px;
+
+                max-height: 62vh;
+
+            }
+
+            .kerala-modal-content>h3 {
+
+                font-size: 24px;
+
+            }
+
+            .kerala-modal-footer {
+
+                padding: 14px;
+
+            }
+
+            .kerala-cancel,
+            .kerala-whatsapp {
+
+                padding: 10px 15px;
+
+            }
+
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="nav-container">
+
+            <a href="packages.html" class="logo">
+                <img src="images/club tours logo white.png" class="logo-white" alt="Club Tours">
+                <img src="images/logo.png" class="logo-normal" alt="Club Tours">
+            </a>
+
+
+            <nav>
+
+                <a href="index.html">Home</a>
+
+                <a href="index.html#packages" class="active">
+                    Packages
+                </a>
+
+                <a href="index.html#about">
+                    About Us
+                </a>
+
+                <a href="index.html#services">
+                    Services
+                </a>
+
+                <a href="index.html#gallery">
+                    Gallery
+                </a>
+
+                <a href="index.html#contact">
+                    Contact Us
+                </a>
+
+                <a href="index.html#enquire" class="nav-btn">
+                    ENQUIRE NOW
+                </a>
+
+            </nav>
+
+
+            <button class="menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="packages-hero">
+
+        <div class="packages-hero-content">
+
+            <div class="packages-hero-label">
+
+                <span></span>
+
+                EXPLORE • TRAVEL • EXPERIENCE
+
+                <span></span>
+
+            </div>
+
+
+            <h1>
+                Discover Your
+                <em>Perfect Journey</em>
+            </h1>
+
+
+            <p>
+                Explore our carefully crafted travel packages
+                and choose the journey that matches your dreams.
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= ALL PACKAGES ================= -->
+
+    <section class="all-packages">
+
+        <div class="container">
+
+
+            <div class="package-heading">
+
+                <div class="section-label center">
+
+                    <span></span>
+
+                    OUR TRAVEL PACKAGES
+
+                    <span></span>
+
+                </div>
+
+
+                <h2>
+                    Choose Your
+                    <em>Adventure</em>
+                </h2>
+
+
+                <p>
+                    From peaceful Kerala escapes to unforgettable
+                    international adventures, find the perfect
+                    package for your next journey.
+                </p>
+
+            </div>
+
+
+
+            <!-- FILTER -->
+
+            <div class="package-filters">
+
+                <button class="filter-btn active" data-filter="all">
+                    All Packages
+                </button>
+
+                <button class="filter-btn" data-filter="kerala">
+                    Kerala
+                </button>
+
+                <button class="filter-btn" data-filter="south">
+                    South India
+                </button>
+
+                <button class="filter-btn" data-filter="north">
+                    North India
+                </button>
+
+                <button class="filter-btn" data-filter="international">
+                    International
+                </button>
+
+            </div>
+
+
+
+            <!-- PACKAGE CARDS -->
+
+            <div class="all-package-grid">
+
+
+                <!-- KERALA -->
+
+                <article class="tour-card" data-category="kerala">
+
+                    <div class="tour-image">
+
+                        <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?auto=format&fit=crop&w=900&q=85"
+                            alt="Kerala">
+
+                        <span class="tour-tag">
+                            KERALA
+                        </span>
+
+                    </div>
+
+
+                    <div class="tour-content">
+
+                        <small>
+                            INDIA • SOUTH
+                        </small>
+
+                        <h3>
+                            Kerala Packages
+                        </h3>
+
+                        <p>
+                            Explore God's Own Country through
+                            beaches, backwaters, hills and
+                            unforgettable experiences.
+                        </p>
+
+
+                        <div class="tour-details">
+
+                            <span>
+                                <i class="fa-regular fa-calendar"></i>
+                                Flexible
+                            </span>
+
+                            <span>
+                                <i class="fa-solid fa-location-dot"></i>
+                                Kerala
+                            </span>
+
+                            <span>
+                                <i class="fa-solid  fa-night"></i>
+                                5 NIGHTS / 6 DAYS 
+                            </span>
+
+                        </div>
+
+
+                        <div class="tour-bottom">
+
+                            <div class="tour-price">
+                                Custom
+                                <small>
+                                    Package Pricing
+                                </small>
+                            </div>
+
+
+                            <button type="button" class="tour-btn" onclick="openItinerary('kerala')">
+                                Enquire
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- SOUTH INDIA -->
+
+                <article class="tour-card" data-category="south">
+
+                    <div class="tour-image">
+
+                        <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=900&q=85"
+                            alt="South India">
+
+                        <span class="tour-tag">
+                            SOUTH INDIA
+                        </span>
+
+                    </div>
+
+
+                    <div class="tour-content">
+
+                        <small>
+                            INDIA • SOUTH
+                        </small>
+
+                        <h3>
+                            South Indian Packages
+                        </h3>
+
+                        <p>
+                            Discover temples, heritage,
+                            mountains and vibrant cultures
+                            across South India.
+                        </p>
+
+
+                        <div class="tour-details">
+
+                            <span>
+                                <i class="fa-regular fa-calendar"></i>
+                                Flexible
+                            </span>
+
+                            <span>
+                                <i class="fa-solid fa-location-dot"></i>
+                                South India
+                            </span>
+
+                            <span>
+                                <i class="fa-solid  fa-night"></i>
+                                5 NIGHTS / 6 DAYS 
+                            </span>
+
+                        </div>
+
+
+                        <div class="tour-bottom">
+
+                            <div class="tour-price">
+                                Custom
+                                <small>
+                                    Package Pricing
+                                </small>
+                            </div>
+
+
+                            <button type="button" class="tour-btn" onclick="openItinerary('south')">
+                                Enquire
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- NORTH INDIA -->
+
+                <article class="tour-card" data-category="north">
+
+                    <div class="tour-image">
+
+                        <img src="https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=900&q=85"
+                            alt="North India">
+
+                        <span class="tour-tag">
+                            NORTH INDIA
+                        </span>
+
+                    </div>
+
+
+                    <div class="tour-content">
+
+                        <small>
+                            INDIA • NORTH
+                        </small>
+
+                        <h3>
+                            North Indian Packages
+                        </h3>
+
+                        <p>
+                            Experience majestic forts,
+                            mountains, royal cities and
+                            India's incredible heritage.
+                        </p>
+
+
+                        <div class="tour-details">
+
+                            <span>
+                                <i class="fa-regular fa-calendar"></i>
+                                Flexible
+                            </span>
+
+                            <span>
+                                <i class="fa-solid fa-location-dot"></i>
+                                North India
+                            </span>
+
+                            <span>
+                                <i class="fa-solid  fa-night"></i>
+                                5 NIGHTS / 6 DAYS 
+                            </span>
+                            
+
+                        </div>
+
+
+                        <div class="tour-bottom">
+
+                            <div class="tour-price">
+                                Custom
+                                <small>
+                                    Package Pricing
+                                </small>
+                            </div>
+
+
+                            <button type="button" class="tour-btn" onclick="openItinerary('north')">
+                                Enquire
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- INTERNATIONAL -->
+
+                <article class="tour-card" data-category="international">
+
+                    <div class="tour-image">
+
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=85"
+                            alt="International">
+
+                        <span class="tour-tag">
+                            INTERNATIONAL
+                        </span>
+
+                    </div>
+
+
+                    <div class="tour-content">
+
+                        <small>
+                            WORLD • INTERNATIONAL
+                        </small>
+
+                        <h3>
+                            International Packages
+                        </h3>
+
+                        <p>
+                            Take your journey beyond borders
+                            and explore some of the world's
+                            most beautiful destinations.
+                        </p>
+
+
+                        <div class="tour-details">
+
+                            <span>
+                                <i class="fa-regular fa-calendar"></i>
+                                Flexible
+                            </span>
+
+                            <span>
+                                <i class="fa-solid fa-globe"></i>
+                                Worldwide
+                            </span>
+                            
+                            <span>
+                                <i class="fa-solid  fa-night"></i>
+                                5 NIGHTS / 6 DAYS 
+                            </span>
+
+                        </div>
+
+
+                        <div class="tour-bottom">
+
+                            <div class="tour-price">
+                                Custom
+                                <small>
+                                    Package Pricing
+                                </small>
+                            </div>
+
+
+                            <button type="button" class="tour-btn" onclick="openItinerary('international')">
+                                Enquire
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+
+
+            <!-- CTA -->
+
+            <div class="packages-cta">
+
+                <h2>
+                    Can't find what
+                    <em>you need?</em>
+                </h2>
+
+                <p>
+                    Tell us where you want to go and we'll
+                    create a travel experience specially
+                    designed for you.
+                </p>
+
+                <a href="index(1).html#enquire" class="cta-btn">
+
+                    Plan My Trip
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <!-- ================= FLOATING WHATSAPP ================= -->
+
+    <a class="whatsapp" href="https://wa.me/917736167880" target="_blank" aria-label="WhatsApp">
+
+        <i class="fa-brands fa-whatsapp"></i>
+
+    </a>
+
+    <!-- ================= KERALA ITINERARY POPUP ================= -->
+
+    <div class="kerala-modal" id="keralaModal">
+
+        <!-- DARK BACKGROUND -->
+        <div class="kerala-modal-overlay" onclick="closeKeralaItinerary()">
+        </div>
+
+
+        <!-- POPUP BOX -->
+        <div class="kerala-modal-box">
+
+            <!-- HEADER -->
+            <div class="kerala-modal-header">
+
+                <h2 id="modalPackageTitle">
+                    Kerala Package
+                </h2>
+
+                <button type="button" class="kerala-close" onclick="closeKeralaItinerary()">
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+            <!-- CONTENT -->
+            <div class="kerala-modal-content">
+
+                <div class="kerala-package-label" id="modalPackageLabel">
+                    CLUB TOURS • KERALA
+                </div>
+
+                <h3 id="modalItineraryTitle">
+                    Kerala Travel Itinerary
+                </h3>
+
+                <p class="kerala-intro" id="modalPackageDescription">
+                    Explore God's Own Country.
+                </p>
+
+
+                <!-- DAY 01 -->
+
+                <div class="kerala-days" id="modalDays">
+
+                    <div class="kerala-day-number">
+                        01
+                    </div>
+
+                    <div class="kerala-day-info">
+
+                        <h4>
+                            Arrival in Kerala
+                        </h4>
+
+                        <p>
+                            Arrival at Kochi Airport / Railway Station.
+                            Meet our representative and transfer to
+                            the hotel. Check-in and relax.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DAY 02 -->
+                <div class="kerala-day">
+
+                    <div class="kerala-day-number">
+                        02
+                    </div>
+
+                    <div class="kerala-day-info">
+
+                        <h4>
+                            Munnar Sightseeing
+                        </h4>
+
+                        <p>
+                            After breakfast proceed to Munnar.
+                            Visit tea plantations, waterfalls and
+                            beautiful scenic viewpoints.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DAY 03 -->
+                <div class="kerala-day">
+
+                    <div class="kerala-day-number">
+                        03
+                    </div>
+
+                    <div class="kerala-day-info">
+
+                        <h4>
+                            Munnar Exploration
+                        </h4>
+
+                        <p>
+                            Visit Mattupetty Dam, Echo Point,
+                            Kundala Lake and the beautiful tea
+                            gardens of Munnar.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DAY 04 -->
+                <div class="kerala-day">
+
+                    <div class="kerala-day-number">
+                        04
+                    </div>
+
+                    <div class="kerala-day-info">
+
+                        <h4>
+                            Thekkady
+                        </h4>
+
+                        <p>
+                            Travel to Thekkady and explore the
+                            beautiful hill station and its
+                            surrounding attractions.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DAY 05 -->
+                <div class="kerala-day">
+
+                    <div class="kerala-day-number">
+                        05
+                    </div>
+
+                    <div class="kerala-day-info">
+
+                        <h4>
+                            Alleppey Houseboat
+                        </h4>
+
+                        <p>
+                            Enjoy a memorable houseboat experience
+                            through the Kerala backwaters.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DAY 06 -->
+                <div class="kerala-day">
+
+                    <div class="kerala-day-number">
+                        06
+                    </div>
+
+                    <div class="kerala-day-info">
+
+                        <h4>
+                            Departure
+                        </h4>
+
+                        <p>
+                            After breakfast check-out and transfer
+                            to Kochi Airport / Railway Station for
+                            your return journey.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FOOTER -->
+            <div class="kerala-modal-footer">
+
+                <button type="button" class="kerala-cancel" onclick="closeKeralaItinerary()">
+
+                    Cancel
+
+                </button>
+
+
+                <a href="https://wa.me/917736167880?text=Hi%20Club%20Tours,%20I%20need%20more%20details%20about%20the%20Kerala%20Package."
+                    target="_blank" class="kerala-whatsapp">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                    More Details
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= BACK TO TOP ================= -->
+
+    <button class="back-top" id="backTop">
+
+        <i class="fa-solid fa-arrow-up"></i>
+
+    </button>
+
+
+    <!-- ================= FILTER SCRIPT ================= -->
+
+    <script>
+
+        const filterButtons =
+            document.querySelectorAll(".filter-btn");
+
+        const tourCards =
+            document.querySelectorAll(".tour-card");
+
+
+        filterButtons.forEach(button => {
+
+            button.addEventListener("click", () => {
+
+                filterButtons.forEach(btn =>
+                    btn.classList.remove("active")
+                );
+
+                button.classList.add("active");
+
+
+                const filter =
+                    button.getAttribute("data-filter");
+
+
+                tourCards.forEach(card => {
+
+                    const category =
+                        card.getAttribute("data-category");
+
+
+                    if (
+                        filter === "all" ||
+                        category === filter
+                    ) {
+
+                        card.style.display = "block";
+
+                        setTimeout(() => {
+                            card.style.opacity = "1";
+                            card.style.transform = "translateY(0)";
+                        }, 50);
+
+                    } else {
+
+                        card.style.opacity = "0";
+                        card.style.transform = "translateY(15px)";
+
+                        setTimeout(() => {
+                            card.style.display = "none";
+                        }, 250);
+
+                    }
+
+                });
+
+            });
+
+        });
+
+
+        /* NAVBAR SCROLL */
+
+        window.addEventListener("scroll", () => {
+
+            const navbar =
+                document.querySelector(".navbar");
+
+            if (window.scrollY > 50) {
+
+                navbar.classList.add("scrolled");
+
+            } else {
+
+                navbar.classList.remove("scrolled");
+
+            }
+
+        });
+
+
+
+
+
+        /* =========================================================
+   BACK TO TOP
+========================================================= */
+
+        const backTop =
+            document.getElementById("backTop");
+
+
+        window.addEventListener("scroll", () => {
+
+            if (window.scrollY > 600) {
+
+                backTop.classList.add("show");
+
+            } else {
+
+                backTop.classList.remove("show");
+
+            }
+
+        });
+
+
+        backTop.addEventListener("click", () => {
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+        });
+
+
+/* =========================================================
+   ALL PACKAGE ITINERARIES
+========================================================= */
+
+const packageItineraries = {
+
+    /* ================= KERALA ================= */
+
+    kerala: {
+
+        title: "Kerala Package",
+
+        label: "CLUB TOURS • KERALA",
+
+        heading: "Kerala Travel Itinerary",
+
+        description:
+            "Explore God's Own Country with Club Tours.",
+
+        whatsapp:
+            "Hi Club Tours, I need more details about the Kerala Package.",
+
+        days: [
+
+            {
+                day: "01",
+                title: "Arrival in Kerala",
+                text:
+                    "Arrival at Kochi Airport / Railway Station. Meet our representative and transfer to the hotel. Check-in and relax."
+            },
+
+            {
+                day: "02",
+                title: "Munnar Sightseeing",
+                text:
+                    "After breakfast proceed to Munnar. Visit tea plantations, waterfalls and beautiful scenic viewpoints."
+            },
+
+            {
+                day: "03",
+                title: "Munnar Exploration",
+                text:
+                    "Visit Mattupetty Dam, Echo Point, Kundala Lake and the beautiful tea gardens of Munnar."
+            },
+
+            {
+                day: "04",
+                title: "Thekkady",
+                text:
+                    "Travel to Thekkady and explore the beautiful hill station and its surrounding attractions."
+            },
+
+            {
+                day: "05",
+                title: "Alleppey Houseboat",
+                text:
+                    "Enjoy a memorable houseboat experience through the beautiful Kerala backwaters."
+            },
+
+            {
+                day: "06",
+                title: "Departure",
+                text:
+                    "After breakfast check-out and transfer to Kochi Airport / Railway Station for your return journey."
+            }
+
+        ]
+
+    },
+
+
+    /* ================= SOUTH INDIA ================= */
+
+    south: {
+
+        title: "South India Package",
+
+        label: "CLUB TOURS • SOUTH INDIA",
+
+        heading: "South India Travel Itinerary",
+
+        description:
+            "Discover temples, heritage, mountains and vibrant cultures across South India.",
+
+        whatsapp:
+            "Hi Club Tours, I need more details about the South India Package.",
+
+        days: [
+
+            {
+                day: "01",
+                title: "Arrival & Hotel Check-in",
+                text:
+                    "Arrival at the destination. Meet our representative and transfer to the hotel. Check-in and relax."
+            },
+
+            {
+                day: "02",
+                title: "City Sightseeing",
+                text:
+                    "Explore the major attractions, historical places and cultural highlights of the destination."
+            },
+
+            {
+                day: "03",
+                title: "Heritage & Culture",
+                text:
+                    "Visit famous temples, heritage monuments and experience the local culture."
+            },
+
+            {
+                day: "04",
+                title: "Mountain / Nature Experience",
+                text:
+                    "Enjoy scenic landscapes, viewpoints and beautiful natural attractions."
+            },
+
+            {
+                day: "05",
+                title: "Departure",
+                text:
+                    "After breakfast check-out and transfer to the airport or railway station for your return journey."
+            }
+
+        ]
+
+    },
+
+
+    /* ================= NORTH INDIA ================= */
+
+    north: {
+
+        title: "North India Package",
+
+        label: "CLUB TOURS • NORTH INDIA",
+
+        heading: "North India Travel Itinerary",
+
+        description:
+            "Experience majestic forts, royal cities, mountains and India's incredible heritage.",
+
+        whatsapp:
+            "Hi Club Tours, I need more details about the North India Package.",
+
+        days: [
+
+            {
+                day: "01",
+                title: "Arrival",
+                text:
+                    "Arrival at the destination and transfer to the hotel. Check-in and relax."
+            },
+
+            {
+                day: "02",
+                title: "City Sightseeing",
+                text:
+                    "Explore the famous attractions, monuments and cultural highlights of the city."
+            },
+
+            {
+                day: "03",
+                title: "Royal Heritage",
+                text:
+                    "Visit magnificent forts, palaces and historic landmarks."
+            },
+
+            {
+                day: "04",
+                title: "Local Exploration",
+                text:
+                    "Enjoy local sightseeing, shopping and experience the unique culture of North India."
+            },
+
+            {
+                day: "05",
+                title: "Departure",
+                text:
+                    "After breakfast check-out and transfer to the airport or railway station."
+            }
+
+        ]
+
+    },
+
+
+    /* ================= INTERNATIONAL ================= */
+
+    international: {
+
+        title: "International Package",
+
+        label: "CLUB TOURS • INTERNATIONAL",
+
+        heading: "International Travel Itinerary",
+
+        description:
+            "Take your journey beyond borders and explore beautiful international destinations.",
+
+        whatsapp:
+            "Hi Club Tours, I need more details about the International Package.",
+
+        days: [
+
+            {
+                day: "01",
+                title: "Arrival & Hotel Check-in",
+                text:
+                    "Arrival at the international destination. Airport pickup and transfer to the hotel."
+            },
+
+            {
+                day: "02",
+                title: "City Tour",
+                text:
+                    "Explore the major landmarks, attractions and famous places of the destination."
+            },
+
+            {
+                day: "03",
+                title: "Island / Local Tour",
+                text:
+                    "Enjoy a full day sightseeing experience and explore the beautiful surroundings."
+            },
+
+            {
+                day: "04",
+                title: "Adventure & Leisure",
+                text:
+                    "Enjoy optional activities, shopping and free time to explore the destination."
+            },
+
+            {
+                day: "05",
+                title: "Departure",
+                text:
+                    "After breakfast check-out and airport transfer for your return journey."
+            }
+
+        ]
+
+    }
+
+};
+
+
+/* =========================================================
+   OPEN ITINERARY
+========================================================= */
+
+function openItinerary(packageName) {
+
+    const data = packageItineraries[packageName];
+
+    if (!data) return;
+
+
+    /* TITLE */
+
+    document.getElementById("modalPackageTitle")
+        .textContent = data.title;
+
+
+    /* LABEL */
+
+    document.getElementById("modalPackageLabel")
+        .textContent = data.label;
+
+
+    /* HEADING */
+
+    document.getElementById("modalItineraryTitle")
+        .textContent = data.heading;
+
+
+    /* DESCRIPTION */
+
+    document.getElementById("modalPackageDescription")
+        .textContent = data.description;
+
+
+    /* DAYS */
+
+    const daysContainer =
+        document.getElementById("modalDays");
+
+    daysContainer.innerHTML = "";
+
+
+    data.days.forEach(item => {
+
+        daysContainer.innerHTML += `
+
+            <div class="kerala-day">
+
+                <div class="kerala-day-number">
+                    ${item.day}
+                </div>
+
+                <div class="kerala-day-info">
+
+                    <h4>
+                        ${item.title}
+                    </h4>
+
+                    <p>
+                        ${item.text}
+                    </p>
+
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+
+    /* WHATSAPP */
+
+    const whatsappMessage =
+        encodeURIComponent(data.whatsapp);
+
+    document.querySelector(".kerala-whatsapp").href =
+        "https://wa.me/917736167880?text=" +
+        whatsappMessage;
+
+
+    /* OPEN */
+
+    document.getElementById("keralaModal")
+        .classList.add("active");
+
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+/* =========================================================
+   CLOSE
+========================================================= */
+
+function closeKeralaItinerary() {
+
+    document.getElementById("keralaModal")
+        .classList.remove("active");
+
+    document.body.style.overflow = "";
+
+}
+
+
+/* ESC */
+
+document.addEventListener("keydown", function(event) {
+
+    if (event.key === "Escape") {
+
+        closeKeralaItinerary();
+
+    }
+
+});
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tour Itinerary | Club Tours</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            background: #f7f9fa;
+            color: #172027;
+        }
+
+        .navbar {
+            height: 82px;
+            background: white;
+            display: flex;
+            align-items: center;
+            box-shadow: 0 2px 12px rgba(0,0,0,.08);
+        }
+
+        .nav-container {
+            width: min(1200px, 90%);
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 155px;
+        }
+
+        .back-btn {
+            color: #008da3;
+            font-weight: 700;
+        }
+
+
+        /* HERO */
+
+        .hero {
+            background: #07899d;
+            color: white;
+            text-align: center;
+            padding: 70px 20px;
+        }
+
+        .hero h1 {
+            font-family: "Playfair Display", serif;
+            font-size: 44px;
+            margin-bottom: 12px;
+        }
+
+        .hero p {
+            font-size: 18px;
+        }
+
+
+        /* CONTENT */
+
+        .container {
+            width: min(1100px, 90%);
+            margin: auto;
+        }
+
+        .content {
+            padding: 55px 0 100px;
+        }
+
+
+        /* OVERVIEW */
+
+        .overview {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0,0,0,.07);
+            margin-bottom: 30px;
+        }
+
+        .overview h2 {
+            font-family: "Playfair Display", serif;
+            margin-bottom: 20px;
+        }
+
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 15px;
+        }
+
+        .overview-box {
+            background: #f2f8f9;
+            padding: 18px;
+            border-radius: 10px;
+        }
+
+        .overview-box strong {
+            display: block;
+            color: #008da3;
+            margin-bottom: 5px;
+        }
+
+
+        /* DAY */
+
+        .day {
+            background: white;
+            padding: 30px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,.06);
+            border-left: 5px solid #008da3;
+        }
+
+        .day h3 {
+            color: #008da3;
+            margin-bottom: 12px;
+        }
+
+        .day p {
+            color: #555;
+            line-height: 1.8;
+        }
+
+
+        /* BOOK */
+
+        .booking-box {
+            margin-top: 40px;
+            background: #07899d;
+            color: white;
+            padding: 40px;
+            border-radius: 18px;
+            text-align: center;
+        }
+
+        .booking-box h2 {
+            font-family: "Playfair Display", serif;
+            margin-bottom: 10px;
+        }
+
+        .book-button {
+            display: inline-block;
+            margin-top: 20px;
+            background: white;
+            color: #07899d;
+            padding: 13px 35px;
+            border-radius: 30px;
+            font-weight: 700;
+        }
+
+
+        @media(max-width:700px) {
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="index.html" class="logo">
+            <img src="images/logo.png" alt="Club Tours">
+        </a>
+
+        <a href="" class="back-btn">
+            ← Back to Packages
+        </a>
+
+    </div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <h1 id="packageTitle">
+        Munnar Magic
+    </h1>
+
+    <p id="packageSubtitle">
+        Explore Kerala with Club Tours
+    </p>
+
+</section>
+
+
+<!-- CONTENT -->
+
+<main class="content">
+
+    <div class="container">
+
+
+        <!-- OVERVIEW -->
+
+        <div class="overview">
+
+            <h2>Trip Overview</h2>
+
+            <div class="overview-grid">
+
+                <div class="overview-box">
+
+                    <strong>Destination</strong>
+
+                    <span id="destination">
+                        Munnar, Kerala
+                    </span>
+
+                </div>
+
+                <div class="overview-box">
+
+                    <strong>Duration</strong>
+
+                    <span id="duration">
+                        3 Days / 2 Nights
+                    </span>
+
+                </div>
+
+                <div class="overview-box">
+
+                    <strong>Tour Type</strong>
+
+                    <span id="tourType">
+                        Kerala Holiday
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ITINERARY -->
+
+        <div id="itinerary">
+
+            <div class="day">
+
+                <h3>DAY 01 — Arrival & Munnar Sightseeing</h3>
+
+                <p>
+                    Pickup from the designated location and proceed
+                    towards Munnar. Enjoy scenic mountain views on the
+                    way. Visit waterfalls and beautiful viewpoints.
+                    Check-in at hotel and overnight stay in Munnar.
+                </p>
+
+            </div>
+
+
+            <div class="day">
+
+                <h3>DAY 02 — Munnar Sightseeing</h3>
+
+                <p>
+                    After breakfast, proceed for a full-day Munnar
+                    sightseeing tour. Visit tea plantations,
+                    viewpoints, gardens and major attractions.
+                    Evening return to hotel and overnight stay.
+                </p>
+
+            </div>
+
+
+            <div class="day">
+
+                <h3>DAY 03 — Departure</h3>
+
+                <p>
+                    After breakfast, check out from the hotel.
+                    Proceed towards the departure point with beautiful
+                    memories of Munnar and Kerala.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOOKING -->
+
+        <div class="booking-box">
+
+            <h2>Ready to Start Your Journey?</h2>
+
+            <p>
+                Contact our travel advisor and book your package today.
+            </p>
+
+            <a
+                href="https://wa.me/919061580007"
+                target="_blank"
+                class="book-button">
+                BOOK THIS PACKAGE
+            </a>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+<script>
+
+const packages = {
+
+    munnar: {
+
+        title: "Munnar Magic",
+
+        subtitle: "Lush green hills & tea plantations",
+
+        destination: "Munnar, Kerala",
+
+        duration: "3 Days / 2 Nights",
+
+        type: "Kerala Holiday",
+
+        days: [
+
+            [
+                "DAY 01 — Arrival & Munnar Sightseeing",
+                "Pickup from the designated location and proceed towards Munnar. Enjoy scenic mountain views, waterfalls and beautiful viewpoints. Check-in at hotel and overnight stay in Munnar."
+            ],
+
+            [
+                "DAY 02 — Munnar Sightseeing",
+                "After breakfast, proceed for a full-day Munnar sightseeing tour. Visit tea plantations, viewpoints, gardens and major attractions. Evening return to hotel and overnight stay."
+            ],
+
+            [
+                "DAY 03 — Departure",
+                "After breakfast, check out from the hotel and proceed towards the departure point with beautiful memories of Munnar and Kerala."
+            ]
+
+        ]
+
+    },
+
+
+    alleppey: {
+
+        title: "Alleppey Backwater",
+
+        subtitle: "Relax among Kerala's beautiful backwaters",
+
+        destination: "Alleppey, Kerala",
+
+        duration: "2 Days / 1 Night",
+
+        type: "Kerala Holiday",
+
+        days: [
+
+            [
+                "DAY 01 — Arrival & Houseboat",
+                "Arrival at Alleppey and transfer to the houseboat. Enjoy the beautiful Kerala backwaters, villages and sunset cruise. Overnight stay."
+            ],
+
+            [
+                "DAY 02 — Backwater Experience & Departure",
+                "Breakfast on the houseboat. Enjoy the final backwater views and proceed for departure."
+            ]
+
+        ]
+
+    },
+
+
+    wayanad: {
+
+        title: "Wayanad Escape",
+
+        subtitle: "Explore forests, hills & waterfalls",
+
+        destination: "Wayanad, Kerala",
+
+        duration: "3 Days / 2 Nights",
+
+        type: "Kerala Holiday",
+
+        days: [
+
+            [
+                "DAY 01 — Arrival in Wayanad",
+                "Arrival at Wayanad and hotel check-in. Visit nearby attractions and viewpoints."
+            ],
+
+            [
+                "DAY 02 — Wayanad Sightseeing",
+                "After breakfast explore waterfalls, viewpoints, forests and major Wayanad attractions."
+            ],
+
+            [
+                "DAY 03 — Departure",
+                "Breakfast, checkout and departure with beautiful memories."
+            ]
+
+        ]
+
+    },
+
+
+    rajasthan: {
+
+        title: "Rajasthan Royal Heritage",
+
+        subtitle: "Forts, palaces & royal experiences",
+
+        destination: "Rajasthan, India",
+
+        duration: "5 Days / 4 Nights",
+
+        type: "Heritage Tour",
+
+        days: [
+
+            [
+                "DAY 01 — Arrival",
+                "Arrival in Rajasthan and transfer to hotel. Evening leisure."
+            ],
+
+            [
+                "DAY 02 — Forts & Palaces",
+                "Explore magnificent forts, palaces and historic landmarks."
+            ],
+
+            [
+                "DAY 03 — Royal Rajasthan",
+                "Continue sightseeing through heritage locations and local markets."
+            ],
+
+            [
+                "DAY 04 — Desert Experience",
+                "Enjoy desert landscapes and traditional cultural experiences."
+            ],
+
+            [
+                "DAY 05 — Departure",
+                "Breakfast, checkout and transfer for departure."
+            ]
+
+        ]
+
+    },
+
+
+    hyderabad: {
+
+        title: "Hyderabad Heritage",
+
+        subtitle: "History, monuments & culture",
+
+        destination: "Hyderabad, India",
+
+        duration: "4 Days / 3 Nights",
+
+        type: "Heritage Tour",
+
+        days: [
+
+            [
+                "DAY 01 — Arrival",
+                "Arrival in Hyderabad and transfer to hotel."
+            ],
+
+            [
+                "DAY 02 — City Sightseeing",
+                "Visit Birla Mandir, Hussain Sagar Lake and major city attractions."
+            ],
+
+            [
+                "DAY 03 — Heritage Tour",
+                "Visit Charminar, museums and important historical monuments."
+            ],
+
+            [
+                "DAY 04 — Departure",
+                "Breakfast, checkout and transfer for departure."
+            ]
+
+        ]
+
+    },
+
+
+    beach: {
+
+        title: "International Beach Getaway",
+
+        subtitle: "Tropical beaches & unforgettable experiences",
+
+        destination: "International",
+
+        duration: "4 Days / 3 Nights",
+
+        type: "Beach Holiday",
+
+        days: [
+
+            [
+                "DAY 01 — Arrival",
+                "Arrival at destination, airport pickup and hotel check-in."
+            ],
+
+            [
+                "DAY 02 — Beach Experience",
+                "Enjoy beautiful beaches, island views and water activities."
+            ],
+
+            [
+                "DAY 03 — Island & City Tour",
+                "Explore major attractions and enjoy a relaxing tropical experience."
+            ],
+
+            [
+                "DAY 04 — Departure",
+                "Breakfast, checkout and transfer to airport."
+            ]
+
+        ]
+
+    },
+
+
+    goa: {
+
+        title: "Goa Beach Holiday",
+
+        subtitle: "Sun, sand & unforgettable moments",
+
+        destination: "Goa, India",
+
+        duration: "3 Days / 2 Nights",
+
+        type: "Beach Holiday",
+
+        days: [
+
+            [
+                "DAY 01 — Arrival in Goa",
+                "Airport or railway station pickup and hotel check-in. Evening beach visit."
+            ],
+
+            [
+                "DAY 02 — Goa Sightseeing",
+                "Explore famous beaches, churches, viewpoints and local attractions."
+            ],
+
+            [
+                "DAY 03 — Departure",
+                "Breakfast, checkout and departure."
+            ]
+
+        ]
+
+    }
+
+};
+
+
+const params =
+    new URLSearchParams(window.location.search);
+
+const selected =
+    params.get("package") || "munnar";
+
+
+const data =
+    packages[selected] || packages.munnar;
+
+
+document.getElementById("packageTitle").textContent =
+    data.title;
+
+document.getElementById("packageSubtitle").textContent =
+    data.subtitle;
+
+document.getElementById("destination").textContent =
+    data.destination;
+
+document.getElementById("duration").textContent =
+    data.duration;
+
+document.getElementById("tourType").textContent =
+    data.type;
+
+
+const itinerary =
+    document.getElementById("itinerary");
+
+
+itinerary.innerHTML = "";
+
+
+data.days.forEach(day => {
+
+    const div =
+        document.createElement("div");
+
+    div.className = "day";
+
+    div.innerHTML = `
+        <h3>${day[0]}</h3>
+        <p>${day[1]}</p>
+    `;
+
+    itinerary.appendChild(div);
+
+});
+
+
+document.title =
+    data.title + " | Club Tours";
+
+</script>
+
+</body>
+</html>
